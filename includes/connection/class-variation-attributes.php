@@ -53,7 +53,12 @@ class Variation_Attributes {
 				'fromType'       => 'ProductVariation',
 				'toType'         => 'VariationAttribute',
 				'fromFieldName'  => 'attributes',
-				'connectionArgs' => array(),
+				'connectionArgs' => array(
+					'taxonomy' => array(
+						'type'        => 'String',
+						'description' => __( 'Filter results by taxonomy type.', 'wp-graphql-woocommerce' ),
+					),
+				),
 				'resolve'        => function( $root, array $args, AppContext $context, ResolveInfo $info ) {
 					return Factory::resolve_variation_attribute_connection( $root, $args, $context, $info );
 				},
