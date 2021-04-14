@@ -80,6 +80,10 @@ class Product_Attributes {
 				'type'        => 'ProductAttributeTypesEnum',
 				'description' => __( 'Filter results by attribute scope.', 'wp-graphql-woocommerce' ),
 			),
+			'taxonomy' => array(
+				'type'        => 'String',
+				'description' => __( 'Filter results by taxonomy type.', 'wp-graphql-woocommerce' ),
+			),
 		);
 	}
 }
