@@ -36,6 +36,9 @@ class Product_Attribute_Connection_Resolver {
 	 */
 	private function get_items( $attributes, $source, $args, $context, $info ) {
 		$items = array();
+		if( ! empty( $args['where']['taxonomy'] ) ){
+			$attributes = array( $args['where']['taxonomy'] => $attributes[$args['where']['taxonomy']]);
+		}
 		foreach ( $attributes as $attribute_name => $data ) {
 			// phpcs:ignore WordPress.PHP.DiscouragedPHPFunctions.obfuscation_base64_encode
 			$data->_relay_id = base64_encode(
